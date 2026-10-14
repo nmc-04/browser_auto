@@ -1,0 +1,34 @@
+[
+  {
+    "id": "EML-001",
+    "from": "Sarah Jenkins <sjenkins@acromsystems.com>",
+    "to": "user@workpilot.com",
+    "subject": "Agenda for 3 PM Client Meeting - Milestone 2 & Contract Renewal",
+    "date": "Today, 08:45 AM",
+    "body": "Hi team,\nLooking forward to our 3 PM meeting today. We want to finalize the Milestone 2 deliverables and review the proposed contract renewal terms for Q4. Please ensure the performance benchmarks and pending deliverable schedule are ready.\n\nBest,\nSarah Jenkins\nVP Operations, Acrom Systems"
+  },
+  {
+    "id": "EML-002",
+    "from": "billing@apexsolutions.com",
+    "to": "accounts@workpilot.com",
+    "subject": "RE: Invoice INV-2024-001 Inquiry",
+    "date": "Yesterday, 04:15 PM",
+    "body": "Hello, we noticed Invoice INV-2024-001 has been flagged. Please send the detailed statement and copy of the invoice so we can expedite processing with our treasury department."
+  },
+  {
+    "id": "EML-003",
+    "from": "admin@workpilot.com",
+    "to": "user@workpilot.com",
+    "subject": "Office Supplies Low Stock Notice",
+    "date": "Today, 09:10 AM",
+    "body": "Paper supplies (A4) and whiteboard markers are critically low in conference rooms A & B. Please place an order through the e-commerce supplier portal today."
+  },
+  {
+    "id": "EML-004",
+    "from": "director@workpilot.com",
+    "to": "user@workpilot.com",
+    "subject": "End of Month Employee Performance Report Request",
+    "date": "Yesterday, 06:00 PM",
+    "body": "Please compile this month's consolidated employee activity report covering completed tasks, client meetings, project milestones, and pending deliverables."
+  }
+]

@@ -1,0 +1,14 @@
+=== TAX INVOICE ===
+Invoice Number: INV-2024-005
+Client: Horizon Labs
+Billing Email: contact@horizonlabs.net
+Date: 2024-09-05
+Due Date: 2024-09-28
+Amount Due: INR 68000
+Payment Status: Unpaid
+
+Item Description: Enterprise Software Engineering & Cloud Support Services
+Subtotal: INR 55760.00
+GST (18%): INR 12240.00
+Total Amount Payable: INR 68000.00
+Bank Account: HDFC BANK - AC# 5010049281729 - IFSC: HDFC0001234

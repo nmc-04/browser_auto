@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkPilot — Employee Work Portal</title>
+    <style>
+        :root {
+            --bg-main: #0b1120;
+            --bg-card: #131d33;
+            --bg-sidebar: #070c18;
+            --border-color: #213053;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-main); display: flex; height: 100vh; overflow: hidden; }
+
+        /* Sidebar */
+        aside {
+            width: 250px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+        .brand {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #6366f1, #38bdf8);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        .brand-text h2 { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .brand-text p { font-size: 11px; color: var(--text-muted); }
+
+        .nav-list { list-style: none; padding: 15px 12px; overflow-y: auto; flex: 1; }
+        .nav-item { margin-bottom: 4px; }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            background-color: #1e293b;
+            color: #38bdf8;
+        }
+        .nav-link.active {
+            background-color: #1e3a8a;
+            color: #93c5fd;
+            border-left: 3px solid #38bdf8;
+        }
+        .badge {
+            margin-left: auto;
+            background: #273754;
+            color: #94a3b8;
+            font-size: 11px;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .user-panel {
+            padding: 14px 20px 0 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Main Workspace */
+        main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+        header {
+            height: 64px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 28px;
+        }
+        .header-title h1 { font-size: 20px; font-weight: 800; color: #fff; }
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #0f172a;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            font-size: 12px;
+            color: #38bdf8;
+        }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .content-area { flex: 1; padding: 24px 28px; overflow-y: auto; }
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; animation: fadeIn 0.2s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Generic UI Components */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .stat-val { font-size: 24px; font-weight: 800; color: #fff; line-height: 1; }
+        .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+        th { text-align: left; padding: 12px 14px; color: var(--text-muted); border-bottom: 1px solid var(--border-color); font-weight: 700; }
+        td { padding: 12px 14px; border-bottom: 1px solid #1c2742; }
+        tr:hover td { background-color: rgba(255,255,255,0.02); }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .btn:hover { background: var(--primary-hover); }
+        .btn-success { background: var(--accent-green); }
+        .btn-success:hover { background: #059669; }
+        .btn-sm { padding: 5px 10px; font-size: 12px; }
+        .btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); }
+        .btn-outline:hover { background: #1e293b; color: #fff; }
+
+        .status-pill {
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .pill-pending { background: #3b2812; color: #f59e0b; border: 1px solid #784912; }
+        .pill-completed { background: #093325; color: #10b981; border: 1px solid #0d5e44; }
+        .pill-paid { background: #093325; color: #10b981; border: 1px solid #0d5e44; }
+        .pill-unpaid { background: #3f191b; color: #ef4444; border: 1px solid #752327; }
+        .pill-overdue { background: #4a1515; color: #f87171; border: 1px solid #991b1b; }
+        .pill-sent { background: #1e3a8a; color: #93c5fd; border: 1px solid #2563eb; }
+
+        /* Filter Row */
+        .filter-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 12px; }
+        .filter-btns { display: flex; gap: 8px; }
+        .filter-btns button {
+            background: #10192e;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .filter-btns button.active { background: #1e3a8a; color: #93c5fd; border-color: #38bdf8; font-weight: 700; }
+
+        /* Email Module */
+        .email-container { display: flex; gap: 20px; height: 600px; }
+        .email-sidebar { width: 180px; border-right: 1px solid var(--border-color); padding-right: 16px; }
+        .email-main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+        .email-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #1c2742;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .email-row:hover { background: rgba(255,255,255,0.03); }
+        .email-row.unread { font-weight: 700; color: #fff; background: rgba(56, 189, 248, 0.05); }
+
+        .compose-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            background: #090f1f;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: #38bdf8; }
+
+        /* Procurement Grid */
+        .proc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 14px; }
+        .prod-card {
+            background: #0e172a;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .prod-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: #fff; }
+        .prod-price { font-size: 16px; font-weight: 800; color: #38bdf8; margin: 8px 0; }
+
+        /* Notice / Alert */
+        .notice-banner {
+            background: #093325;
+            border: 1px solid #10b981;
+            color: #a7f3d0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside>
+    <div>
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+            <div class="brand-text">
+                <h2>WorkPilot</h2>
+                <p>Enterprise Work Portal</p>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="nav-link active" id="nav-dashboard" onclick="showTab('dashboard')">
+                    <span>📊</span> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-tasks" onclick="showTab('tasks')">
+                    <span>✓</span> Tasks <span class="badge" id="task-badge">5</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-calendar" onclick="showTab('calendar')">
+                    <span>📅</span> Calendar <span class="badge">4</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-email" onclick="showTab('email')">
+                    <span>✉️</span> Email <span class="badge" id="email-badge">4</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-invoices" onclick="showTab('invoices')">
+                    <span>📑</span> Invoices <span class="badge" id="invoice-badge">4</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-procurement" onclick="showTab('procurement')">
+                    <span>🛒</span> Procurement
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-documents" onclick="showTab('documents')">
+                    <span>📄</span> Documents
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="nav-reports" onclick="showTab('reports')">
+                    <span>📈</span> Reports
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="user-panel">
+        <div class="avatar">WP</div>
+        <div>
+            <div style="font-size: 13px; font-weight: 700;">Alex Smith</div>
+            <div style="font-size: 11px; color: var(--text-muted);">alex@workpilot.com</div>
+        </div>
+    </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main>
+    <header>
+        <div class="header-title">
+            <h1 id="page-title">Executive Dashboard</h1>
+        </div>
+        <div class="header-status">
+            <div class="status-dot"></div>
+            <span>System Active &bull; AI Agent Ready</span>
+        </div>
+    </header>
+
+    <div class="content-area">
+        <div id="notice-box" class="notice-banner"></div>
+
+        <!-- 1. DASHBOARD TAB -->
+        <div id="tab-dashboard" class="tab-pane active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#1e3a8a; color:#60a5fa;">✓</div>
+                    <div>
+                        <div class="stat-val" id="stat-tasks">5</div>
+                        <div class="stat-label">Pending Tasks</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#093325; color:#34d399;">📅</div>
+                    <div>
+                        <div class="stat-val">4</div>
+                        <div class="stat-label">Today's Meetings</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#3b2812; color:#fbbf24;">✉️</div>
+                    <div>
+                        <div class="stat-val" id="stat-emails">4</div>
+                        <div class="stat-label">Unread Emails</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#3f191b; color:#f87171;">📑</div>
+                    <div>
+                        <div class="stat-val" id="stat-invoices">4</div>
+                        <div class="stat-label">Unpaid Invoices</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 style="font-size: 15px;">🔥 Priority Action Items</h3>
+                        <button class="btn btn-sm btn-outline" onclick="showTab('tasks')">View All</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Description</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dash-task-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 15px; margin-bottom: 12px;">📅 Today's Schedule</h3>
+                    <div id="dash-calendar-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. TASKS TAB -->
+        <div id="tab-tasks" class="tab-pane">
+            <div class="card">
+                <div class="filter-row">
+                    <h3>Employee Task Board</h3>
+                    <div class="filter-btns">
+                        <button id="task-filter-all" class="active" onclick="filterTasks('all')">All (5)</button>
+                        <button id="task-filter-pending" onclick="filterTasks('pending')">Pending</button>
+                        <button id="task-filter-completed" onclick="filterTasks('completed')">Completed</button>
+                    </div>
+                </div>
+                <table id="task-table">
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Task Title</th>
+                            <th>Priority</th>
+                            <th>Due Date</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. CALENDAR TAB -->
+        <div id="tab-calendar" class="tab-pane">
+            <div class="card">
+                <div class="filter-row">
+                    <h3>Today's Meetings & Engagements</h3>
+                    <span style="color: var(--text-muted); font-size: 13px;">Date: Today &bull; 4 Events Scheduled</span>
+                </div>
+                <table id="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Meeting / Title</th>
+                            <th>Client / Stakeholder</th>
+                            <th>Type</th>
+                            <th>Agenda / Notes</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. EMAIL TAB -->
+        <div id="tab-email" class="tab-pane">
+            <div class="card">
+                <div class="email-container">
+                    <div class="email-sidebar">
+                        <button class="btn btn-primary" id="email-nav-compose" style="width: 100%; margin-bottom: 14px;" onclick="showEmailSubtab('compose')">✏️ Compose</button>
+                        <div class="nav-link active" id="email-nav-inbox" onclick="showEmailSubtab('inbox')">📥 Inbox (<span id="inbox-count">4</span>)</div>
+                        <div class="nav-link" id="email-nav-sent" onclick="showEmailSubtab('sent')">📤 Sent (<span id="sent-count">0</span>)</div>
+                    </div>
+                    <div class="email-main">
+                        <!-- Inbox list -->
+                        <div id="email-inbox-view">
+                            <h4 style="margin-bottom: 12px;">Inbox Messages</h4>
+                            <div id="email-list"></div>
+                        </div>
+
+                        <!-- Sent list -->
+                        <div id="email-sent-view" style="display: none;">
+                            <h4 style="margin-bottom: 12px;">Dispatched Communications (Sent)</h4>
+                            <table id="sent-table">
+                                <thead>
+                                    <tr>
+                                        <th>Recipient</th>
+                                        <th>Subject</th>
+                                        <th>Attachment</th>
+                                        <th>Timestamp</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sent-table-body"></tbody>
+                            </table>
+                        </div>
+
+                        <!-- Compose box -->
+                        <div id="email-compose-view" class="compose-box" style="display: none;">
+                            <h4 style="margin-bottom: 14px;">Compose New Email</h4>
+                            <div class="form-group">
+                                <label>Recipient (To):</label>
+                                <input type="email" id="email-to" placeholder="client@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject:</label>
+                                <input type="text" id="email-subject" placeholder="Payment Reminder / Project Update">
+                            </div>
+                            <div class="form-group">
+                                <label>Attachment:</label>
+                                <select id="email-attachment">
+                                    <option value="">-- No Attachment --</option>
+                                    <option value="demo_data/invoices/INV-2024-001.txt">Invoice INV-2024-001 (Apex Solutions)</option>
+                                    <option value="demo_data/invoices/INV-2024-003.txt">Invoice INV-2024-003 (Quantum Corp)</option>
+                                    <option value="demo_data/invoices/INV-2024-004.txt">Invoice INV-2024-004 (Vertex Media)</option>
+                                    <option value="demo_data/invoices/INV-2024-005.txt">Invoice INV-2024-005 (Horizon Labs)</option>
+                                    <option value="reports/employee_activity_report.md">Monthly Employee Activity Report</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Body Message:</label>
+                                <textarea id="email-body" rows="6" placeholder="Enter message body..."></textarea>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="btn btn-primary" id="email-send-btn" onclick="sendEmailForm()">Send Email</button>
+                                <button class="btn btn-outline" onclick="showEmailSubtab('inbox')">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. INVOICES TAB -->
+        <div id="tab-invoices" class="tab-pane">
+            <div class="card">
+                <div class="filter-row">
+                    <div>
+                        <h3>Invoice & Accounts Management</h3>
+                        <p style="color: var(--text-muted); font-size: 12px; margin-top: 2px;">Synchronized with Enterprise Excel Records</p>
+                    </div>
+                    <div class="filter-btns">
+                        <button id="invoice-filter-all" class="active" onclick="filterInvoices('all')">All Invoices</button>
+                        <button id="invoice-filter-unpaid" onclick="filterInvoices('unpaid')">Unpaid & Overdue (4)</button>
+                        <button id="invoice-filter-paid" onclick="filterInvoices('paid')">Paid</button>
+                    </div>
+                </div>
+                <table id="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Client Name</th>
+                            <th>Billing Email</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Payment Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 6. PROCUREMENT TAB -->
+        <div id="tab-procurement" class="tab-pane">
+            <div class="card">
+                <div class="filter-row">
+                    <div>
+                        <h3>Office Supplies & Equipment Procurement</h3>
+                        <p style="color: var(--text-muted); font-size: 12px;">Corporate catalog with automatic budget validation</p>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="proc-search-input" placeholder="Search supplies, paper, pens..." style="background:#090f1f; border:1px solid var(--border-color); color:#fff; padding:6px 12px; border-radius:6px; font-size:13px; width:220px;">
+                        <button class="btn btn-primary btn-sm" id="proc-search-btn" onclick="filterProcurement()">Search</button>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 3;">
+                        <div class="proc-grid" id="proc-product-grid"></div>
+                    </div>
+                    <div style="flex: 1; background: #0c1426; border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; height: fit-content;">
+                        <h4 style="margin-bottom: 12px;">🛒 Staged Order Cart</h4>
+                        <ul id="proc-cart-list" style="list-style: none; margin-bottom: 14px; max-height: 200px; overflow-y: auto;">
+                            <li style="color: var(--text-muted); font-size: 12px;">Cart is empty.</li>
+                        </ul>
+                        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 14px; font-size: 14px;">
+                            <span>Total:</span>
+                            <span id="proc-cart-total" style="color: #38bdf8;">₹0.00</span>
+                        </div>
+                        <button class="btn btn-success" id="proc-checkout-btn" style="width: 100%; margin-bottom: 8px;" onclick="reviewProcurementOrder()">Review Order</button>
+                        
+                        <div id="proc-order-confirmation" style="display: none; background: #064e3b; border: 1px solid #10b981; padding: 10px; border-radius: 6px; font-size: 12px; color: #a7f3d0; margin-top: 10px;">
+                            <strong id="proc-order-id">Order Staged</strong>
+                            <p style="margin: 4px 0;">Awaiting Human Confirmation before payment.</p>
+                            <button class="btn btn-sm btn-outline" id="proc-download-invoice-btn" onclick="downloadProcInvoice()" style="margin-top: 6px; width: 100%;">📄 Download Invoice</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. DOCUMENTS TAB -->
+        <div id="tab-documents" class="tab-pane">
+            <div class="card">
+                <h3 style="margin-bottom: 12px;">Central Document Repository</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Size</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="docs-table-body">
+                        <tr>
+                            <td><strong>Acrom_Project_Deliverables_Q3.txt</strong></td>
+                            <td>Project Specifications</td>
+                            <td>AWS ECS Deployment & SSO Milestone Handover Specs</td>
+                            <td>1.2 KB</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('Acrom_Project_Deliverables_Q3.txt')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Acrom_Contract_Renewal_Terms.txt</strong></td>
+                            <td>Legal & Contracts</td>
+                            <td>Q4 Retainer Agreement Terms (INR 3,60,000/Quarter)</td>
+                            <td>980 B</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('Acrom_Contract_Renewal_Terms.txt')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>INV-2024-001.txt</strong></td>
+                            <td>Invoice Statements</td>
+                            <td>Apex Solutions Tax Invoice (INR 45,000)</td>
+                            <td>640 B</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('INV-2024-001.txt')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>INV-2024-003.txt</strong></td>
+                            <td>Invoice Statements</td>
+                            <td>Quantum Corp Tax Invoice (INR 32,000)</td>
+                            <td>640 B</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('INV-2024-003.txt')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>INV-2024-004.txt</strong></td>
+                            <td>Invoice Statements</td>
+                            <td>Vertex Media Tax Invoice (INR 12,750)</td>
+                            <td>640 B</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('INV-2024-004.txt')">View</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>INV-2024-005.txt</strong></td>
+                            <td>Invoice Statements</td>
+                            <td>Horizon Labs Tax Invoice (INR 68,000)</td>
+                            <td>640 B</td>
+                            <td><button class="btn btn-sm btn-outline" onclick="previewDoc('INV-2024-005.txt')">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 8. REPORTS TAB -->
+        <div id="tab-reports" class="tab-pane">
+            <div class="card">
+                <div class="filter-row">
+                    <h3>Generated Executive Reports</h3>
+                    <button class="btn btn-primary btn-sm" onclick="showTab('dashboard')">Refresh Metrics</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Report Title</th>
+                            <th>Compiled Date</th>
+                            <th>Scope / Summary</th>
+                            <th>Format</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Monthly Employee Activity & Performance Report</strong></td>
+                            <td>Today, 11:39 AM</td>
+                            <td>5 tasks analyzed, 4 meetings attended, 9 emails verified, 40% completion rate</td>
+                            <td><span class="status-pill pill-sent">Markdown / PDF</span></td>
+                            <td><button class="btn btn-sm btn-outline" id="btn-view-activity-report" onclick="previewReport('activity')">View Report</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Acrom Systems 3 PM Client Meeting Brief</strong></td>
+                            <td>Today, 09:15 AM</td>
+                            <td>Sarah Jenkins agenda thread, AWS ECS delivery specs, Q4 retainer contract terms</td>
+                            <td><span class="status-pill pill-sent">Briefing Memo</span></td>
+                            <td><button class="btn btn-sm btn-outline" id="btn-view-meeting-brief" onclick="previewReport('meeting')">View Brief</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Executive Work Summary</strong></td>
+                            <td>Today, 08:30 AM</td>
+                            <td>Morning standup items, priority deliverable tasks, operational reminders</td>
+                            <td><span class="status-pill pill-sent">Daily Memo</span></td>
+                            <td><button class="btn btn-sm btn-outline" id="btn-view-daily-summary" onclick="previewReport('daily')">View Summary</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="report-modal" style="display: none; margin-top: 20px; background: #060a14; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <h4 id="report-modal-title" style="color: #38bdf8;">Report Preview</h4>
+                        <button class="btn btn-sm btn-outline" onclick="document.getElementById('report-modal').style.display='none'">✕ Close</button>
+                    </div>
+                    <pre id="report-modal-content" style="white-space: pre-wrap; font-family: monospace; font-size: 12px; color: #cbd5e1;"></pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    // In-memory data initialized from business storage
+    let tasks = [
+        { id: "TASK-101", title: "Prepare Acrom Systems client meeting brief & review contract specs", priority: "High", due: "Today, 2:30 PM", category: "Client Relations", status: "Pending" },
+        { id: "TASK-102", title: "Reconcile unpaid vendor invoices & issue reminder notices", priority: "High", due: "Today, 4:00 PM", category: "Finance", status: "Pending" },
+        { id: "TASK-103", title: "Order replenishment office supplies from approved catalog", priority: "Medium", due: "Today, 5:00 PM", category: "Operations", status: "Pending" },
+        { id: "TASK-104", title: "Prepare monthly employee activity and performance report", priority: "Medium", due: "Today, 6:00 PM", category: "Reporting", status: "Pending" },
+        { id: "TASK-105", title: "Update API gateway documentation in internal repository", priority: "Low", due: "Yesterday", category: "Engineering", status: "Completed" }
+    ];
+
+    let meetings = [
+        { time: "09:30 AM", title: "Daily Morning Standup", client: "Team Alpha & Scrum Master", type: "Internal", notes: "Review sprint burndown", status: "Completed" },
+        { time: "11:00 AM", title: "Q3 Deliverables Architecture Review", client: "Dev Team & Arch", type: "Internal", notes: "API gateway architecture", status: "Completed" },
+        { time: "03:00 PM", title: "Acrom Systems Client Meeting", client: "Sarah Jenkins (VP Ops)", type: "Client", notes: "Milestone 2 sign-off & Q4 renewal", status: "Scheduled" },
+        { time: "05:00 PM", title: "Daily Wrap-up & Reporting", client: "Engineering Manager", type: "Internal", notes: "Submit daily summary", status: "Scheduled" }
+    ];
+
+    let invoices = [
+        { number: "INV-2024-001", client: "Apex Solutions", email: "billing@apexsolutions.com", amount: 45000, due: "31 Aug 2024", status: "Overdue" },
+        { number: "INV-2024-002", client: "Nexus Tech", email: "accounts@nexustech.io", amount: 18500, due: "15 Sep 2024", status: "Paid" },
+        { number: "INV-2024-003", client: "Quantum Corp", email: "finance@quantumcorp.com", amount: 32000, due: "25 Sep 2024", status: "Unpaid" },
+        { number: "INV-2024-004", client: "Vertex Media", email: "payables@vertexmedia.org", amount: 12750, due: "10 Sep 2024", status: "Overdue" },
+        { number: "INV-2024-005", client: "Horizon Labs", email: "contact@horizonlabs.net", amount: 68000, due: "28 Sep 2024", status: "Unpaid" }
+    ];
+
+    let emails = [
+        { id: "EML-001", from: "Sarah Jenkins <sjenkins@acromsystems.com>", to: "alex@workpilot.com", subject: "Agenda for 3 PM Client Meeting - Milestone 2 & Contract Renewal", date: "Today, 08:45 AM", body: "Hi team,\nLooking forward to our 3 PM meeting today. We want to finalize the Milestone 2 deliverables and review the proposed contract renewal terms for Q4. Please ensure the performance benchmarks and pending deliverable schedule are ready.\n\nBest,\nSarah Jenkins\nVP Operations, Acrom Systems", unread: true },
+        { id: "EML-002", from: "billing@apexsolutions.com", to: "accounts@workpilot.com", subject: "RE: Invoice INV-2024-001 Inquiry", date: "Yesterday, 04:15 PM", body: "Hello, we noticed Invoice INV-2024-001 has been flagged. Please send the detailed statement and copy of the invoice so we can expedite processing with our treasury department.", unread: true },
+        { id: "EML-003", from: "admin@workpilot.com", to: "alex@workpilot.com", subject: "Office Supplies Low Stock Notice", date: "Today, 09:10 AM", body: "Paper supplies (A4) and whiteboard markers are critically low in conference rooms A & B. Please place an order through the e-commerce supplier portal today.", unread: false },
+        { id: "EML-004", from: "director@workpilot.com", to: "alex@workpilot.com", subject: "End of Month Employee Performance Report Request", date: "Yesterday, 06:00 PM", body: "Please compile this month's consolidated employee activity report covering completed tasks, client meetings, project milestones, and pending deliverables.", unread: false }
+    ];
+
+    let sentEmails = [];
+
+    let products = [
+        { id: 1, name: "A4 Copy Paper Ream (500 Sheets)", price: 320, category: "Paper & Stationery" },
+        { id: 2, name: "Ballpoint Pens (Pack of 50)", price: 250, category: "Writing Instruments" },
+        { id: 3, name: "Sticky Notes Pack (4 Pads)", price: 120, category: "Desk Accessories" },
+        { id: 4, name: "Whiteboard Markers (Set of 4)", price: 180, category: "Presentation" },
+        { id: 5, name: "Wireless Optical Mouse", price: 650, category: "Electronics" },
+        { id: 6, name: "Heavy Duty Stapler", price: 350, category: "Desk Accessories" }
+    ];
+
+    let procCart = [];
+
+    // Navigation Tab Switching
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+        
+        const targetTab = document.getElementById('tab-' + tabId);
+        const targetNav = document.getElementById('nav-' + tabId);
+        if (targetTab) targetTab.classList.add('active');
+        if (targetNav) targetNav.classList.add('active');
+
+        const titles = {
+            dashboard: "Executive Dashboard",
+            tasks: "Task Board & Priorities",
+            calendar: "Daily Calendar & Engagements",
+            email: "Corporate Communications & Mailbox",
+            invoices: "Accounts & Invoice Management",
+            procurement: "Office Supplies Procurement",
+            documents: "Central Document Repository",
+            reports: "Executive Performance Reports"
+        };
+        document.getElementById('page-title').innerText = titles[tabId] || "Employee Portal";
+    }
+
+    // Render Dashboard
+    function renderDashboard() {
+        const tbody = document.getElementById("dash-task-body");
+        tbody.innerHTML = tasks.slice(0, 3).map(t => `
+            <tr>
+                <td><code>${t.id}</code></td>
+                <td>${t.title}</td>
+                <td><span style="color: ${t.priority==='High'?'#ef4444':'#fbbf24'}; font-weight:700;">${t.priority}</span></td>
+                <td><span class="status-pill ${t.status==='Completed'?'pill-completed':'pill-pending'}">${t.status}</span></td>
+            </tr>
+        `).join("");
+
+        const calList = document.getElementById("dash-calendar-list");
+        calList.innerHTML = meetings.map(m => `
+            <div style="background:#0c1426; border:1px solid var(--border-color); border-radius:6px; padding:10px 12px; font-size:12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <strong style="color:#38bdf8;">${m.time}</strong>
+                    <span class="status-pill ${m.status==='Completed'?'pill-completed':'pill-pending'}">${m.status}</span>
+                </div>
+                <div style="font-weight:600; color:#fff;">${m.title}</div>
+                <div style="color:var(--text-muted); font-size:11px;">${m.client}</div>
+            </div>
+        `).join("");
+    }
+
+    // Render Tasks
+    function renderTasks(filter = 'all') {
+        const tbody = document.getElementById("task-table-body");
+        let list = tasks;
+        if (filter === 'pending') list = tasks.filter(t => t.status !== 'Completed');
+        if (filter === 'completed') list = tasks.filter(t => t.status === 'Completed');
+
+        tbody.innerHTML = list.map(t => `
+            <tr id="task-row-${t.id}">
+                <td><code>${t.id}</code></td>
+                <td><strong>${t.title}</strong></td>
+                <td><span style="color: ${t.priority==='High'?'#ef4444':'#fbbf24'}; font-weight:700;">${t.priority}</span></td>
+                <td>${t.due}</td>
+                <td>${t.category}</td>
+                <td><span class="status-pill ${t.status==='Completed'?'pill-completed':'pill-pending'}" id="task-pill-${t.id}">${t.status}</span></td>
+                <td>
+                    ${t.status !== 'Completed' ? 
+                        `<button class="btn btn-sm btn-success" id="task-btn-${t.id}" onclick="setTaskStatus('${t.id}', 'Completed')">Mark Done</button>` :
+                        `<span style="color:#10b981; font-weight:600;">✓ Completed</span>`
+                    }
+                </td>
+            </tr>
+        `).join("");
+    }
+
+    function setTaskStatus(taskId, newStatus) {
+        const t = tasks.find(x => x.id === taskId);
+        if (t) {
+            t.status = newStatus;
+            renderTasks();
+            renderDashboard();
+            showNotice(`✓ Task ${taskId} updated to ${newStatus}`);
+        }
+    }
+
+    function filterTasks(f) {
+        document.querySelectorAll('#tab-tasks .filter-btns button').forEach(b => b.classList.remove('active'));
+        document.getElementById('task-filter-' + f).classList.add('active');
+        renderTasks(f);
+    }
+
+    // Render Calendar
+    function renderCalendar() {
+        const tbody = document.getElementById("calendar-table-body");
+        tbody.innerHTML = meetings.map(m => `
+            <tr id="meeting-row-${m.time.replace(/[: ]/g, '').toLowerCase()}">
+                <td><strong style="color:#38bdf8;">${m.time}</strong></td>
+                <td><strong>${m.title}</strong></td>
+                <td>${m.client}</td>
+                <td>${m.type}</td>
+                <td style="color:var(--text-muted); font-size:12px;">${m.notes}</td>
+                <td><span class="status-pill ${m.status==='Completed'?'pill-completed':'pill-pending'}">${m.status}</span></td>
+            </tr>
+        `).join("");
+    }
+
+    // Render Invoices
+    function renderInvoices(filter = 'all') {
+        const tbody = document.getElementById("invoice-table-body");
+        let list = invoices;
+        if (filter === 'unpaid') list = invoices.filter(i => i.status !== 'Paid');
+        if (filter === 'paid') list = invoices.filter(i => i.status === 'Paid');
+
+        tbody.innerHTML = list.map(inv => {
+            let pillClass = 'pill-paid';
+            if (inv.status === 'Unpaid') pillClass = 'pill-unpaid';
+            if (inv.status === 'Overdue') pillClass = 'pill-overdue';
+            if (inv.status === 'Reminder Sent') pillClass = 'pill-sent';
+
+            return `
+            <tr id="inv-row-${inv.number}">
+                <td><code>${inv.number}</code></td>
+                <td><strong>${inv.client}</strong></td>
+                <td>${inv.email}</td>
+                <td><strong>₹${inv.amount.toLocaleString()}</strong></td>
+                <td>${inv.due}</td>
+                <td><span class="status-pill ${pillClass}" id="inv-status-${inv.number}">${inv.status}</span></td>
+                <td>
+                    ${inv.status !== 'Paid' ? 
+                        `<button class="btn btn-sm btn-primary invoice-send-reminder-btn" id="inv-email-btn-${inv.number}" onclick="quickReminderEmail('${inv.number}')">Send Reminder</button>` : 
+                        `<span style="color:#10b981;">✓ Reconciled</span>`
+                    }
+                </td>
+            </tr>
+            `;
+        }).join("");
+    }
+
+    function setInvoiceStatus(num, status) {
+        const inv = invoices.find(i => i.number === num);
+        if (inv) {
+            inv.status = status;
+            renderInvoices();
+            showNotice(`✓ Invoice ${num} status updated to '${status}'`);
+        }
+    }
+
+    function quickReminderEmail(num) {
+        const inv = invoices.find(i => i.number === num);
+        if (!inv) return;
+        showTab('email');
+        showEmailSubtab('compose');
+        document.getElementById('email-to').value = inv.email;
+        document.getElementById('email-subject').value = `Urgent: Payment Reminder for Invoice ${inv.number} (${inv.client})`;
+        document.getElementById('email-attachment').value = `demo_data/invoices/${inv.number}.txt`;
+        document.getElementById('email-body').value = `Dear ${inv.client} Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice ${inv.number} for INR ${inv.amount.toLocaleString()}.\nPlease find the invoice statement attached.\n\nBest regards,\nWorkPilot Finance`;
+    }
+
+    function filterInvoices(f) {
+        document.querySelectorAll('#tab-invoices .filter-btns button').forEach(b => b.classList.remove('active'));
+        document.getElementById('invoice-filter-' + f).classList.add('active');
+        renderInvoices(f);
+    }
+
+    // Email Subtabs
+    function showEmailSubtab(sub) {
+        document.getElementById('email-inbox-view').style.display = sub === 'inbox' ? 'block' : 'none';
+        document.getElementById('email-sent-view').style.display = sub === 'sent' ? 'block' : 'none';
+        document.getElementById('email-compose-view').style.display = sub === 'compose' ? 'block' : 'none';
+
+        document.getElementById('email-nav-inbox').classList.toggle('active', sub === 'inbox');
+        document.getElementById('email-nav-sent').classList.toggle('active', sub === 'sent');
+    }
+
+    function renderEmails() {
+        const box = document.getElementById("email-list");
+        box.innerHTML = emails.map(e => `
+            <div class="email-row ${e.unread?'unread':''}" onclick="alert('Subject: ${e.subject}\\n\\n${e.body}')">
+                <div style="flex:2;">
+                    <div>${e.from}</div>
+                    <div style="font-size:12px; color:var(--text-muted);">${e.subject}</div>
+                </div>
+                <div style="color:var(--text-muted); font-size:11px;">${e.date}</div>
+            </div>
+        `).join("");
+
+        const sentBody = document.getElementById("sent-table-body");
+        if (sentEmails.length === 0) {
+            sentBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No sent emails recorded.</td></tr>`;
+        } else {
+            sentBody.innerHTML = sentEmails.map(s => `
+                <tr>
+                    <td><strong>${s.to}</strong></td>
+                    <td>${s.subject}</td>
+                    <td><code>${s.attachment || 'None'}</code></td>
+                    <td>${s.time}</td>
+                    <td><span class="status-pill pill-sent">✓ Sent & Verified</span></td>
+                </tr>
+            `).join("");
+        }
+    }
+
+    function sendEmailForm() {
+        const to = document.getElementById("email-to").value;
+        const subj = document.getElementById("email-subject").value;
+        const att = document.getElementById("email-attachment").value;
+        const body = document.getElementById("email-body").value;
+
+        if (!to) { alert("Please enter recipient email."); return; }
+
+        sentEmails.unshift({
+            to: to,
+            subject: subj,
+            attachment: att,
+            body: body,
+            time: new Date().toLocaleTimeString()
+        });
+
+        // If sending invoice reminder, update status
+        invoices.forEach(inv => {
+            if (inv.email === to) inv.status = "Reminder Sent";
+        });
+        renderInvoices();
+
+        document.getElementById("sent-count").innerText = sentEmails.length;
+        renderEmails();
+        showEmailSubtab('sent');
+        showNotice(`✓ Email successfully dispatched to ${to}`);
+    }
+
+    // Procurement
+    function renderProcurement(list = products) {
+        const grid = document.getElementById("proc-product-grid");
+        grid.innerHTML = list.map(p => `
+            <div class="prod-card" id="proc-card-${p.id}">
+                <div>
+                    <div class="prod-title">${p.name}</div>
+                    <div style="font-size:11px; color:var(--text-muted);">${p.category}</div>
+                </div>
+                <div>
+                    <div class="prod-price">₹${p.price.toFixed(2)}</div>
+                    <button class="btn btn-sm btn-primary proc-add-btn" id="proc-add-${p.id}" onclick="addProcCart(${p.id})">+ Add to Cart</button>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    function filterProcurement() {
+        const q = (document.getElementById("proc-search-input").value || "").toLowerCase();
+        const filtered = products.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+        renderProcurement(filtered);
+    }
+
+    function addProcCart(id) {
+        const p = products.find(x => x.id === id);
+        if (p) {
+            procCart.push(p);
+            updateCart();
+            showNotice(`✓ Added ${p.name} to shopping cart`);
+        }
+    }
+
+    function updateCart() {
+        const list = document.getElementById("proc-cart-list");
+        if (procCart.length === 0) {
+            list.innerHTML = `<li style="color: var(--text-muted); font-size: 12px;">Cart is empty.</li>`;
+            document.getElementById("proc-cart-total").innerText = "₹0.00";
+            return;
+        }
+        list.innerHTML = procCart.map(c => `
+            <li style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #1c2742; font-size:12px;">
+                <span>${c.name}</span>
+                <strong>₹${c.price}</strong>
+            </li>
+        `).join("");
+        const total = procCart.reduce((sum, item) => sum + item.price, 0);
+        document.getElementById("proc-cart-total").innerText = `₹${total.toFixed(2)}`;
+    }
+
+    function reviewProcurementOrder() {
+        if (procCart.length === 0) { alert("Cart is empty."); return; }
+        const total = procCart.reduce((sum, item) => sum + item.price, 0);
+        const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById("proc-order-id").innerText = `Order #${orderId} (Total: ₹${total.toFixed(2)})`;
+        document.getElementById("proc-order-confirmation").style.display = "block";
+        showNotice(`✓ Order #${orderId} staged successfully. Awaiting confirmation.`);
+    }
+
+    function downloadProcInvoice() {
+        alert("Downloading corporate order procurement invoice...");
+    }
+
+    function showNotice(msg) {
+        const box = document.getElementById("notice-box");
+        box.innerText = msg;
+        box.style.display = "block";
+        setTimeout(() => { box.style.display = "none"; }, 4000);
+    }
+
+    // Reports Preview
+    function previewReport(type) {
+        const modal = document.getElementById("report-modal");
+        const title = document.getElementById("report-modal-title");
+        const content = document.getElementById("report-modal-content");
+        modal.style.display = "block";
+
+        if (type === 'activity') {
+            title.innerText = "Monthly Employee Activity & Performance Report";
+            content.innerText = `# 📊 Monthly Employee Activity & Performance Report\nDepartment: Enterprise Workflow Operations\n\nExecutive Summary:\n- Total Action Items Handled: 5\n- Task Completion Rate: 40%\n- Meetings Attended: 4\n- Reconciled Accounts: 5 Invoices Tracked\n\nKey Milestones:\n✓ TASK-102 Reconcile unpaid vendor invoices\n✓ TASK-105 Update API gateway documentation`;
+        } else if (type === 'meeting') {
+            title.innerText = "Acrom Systems 3 PM Client Meeting Brief";
+            content.innerText = `# 📋 Executive Meeting Brief\nMeeting: Acrom Systems Client Meeting (3:00 PM)\nKey Contact: Sarah Jenkins, VP Operations\nProject: Acrom Cloud Portal\n\nAgenda:\n1. Milestone 2 AWS ECS deployment sign-off (Passed at 142ms benchmark)\n2. Q4 Retainer Agreement Renewal (INR 3,60,000/Quarter)\n3. Dedicated SRE coverage hours scheduling`;
+        } else {
+            title.innerText = "Daily Executive Work Summary";
+            content.innerText = `# Daily Work Summary\nEvents: 4 Meetings Scheduled\nTasks: 5 Assigned (2 Completed, 3 In Progress)\nCritical Items: Complete Acrom brief before 2:30 PM`;
+        }
+    }
+
+    function previewDoc(filename) {
+        alert("Opening document: " + filename);
+    }
+
+    // Initial load
+    renderDashboard();
+    renderTasks();
+    renderCalendar();
+    renderInvoices();
+    renderEmails();
+    renderProcurement();
+</script>
+
+</body>
+</html>

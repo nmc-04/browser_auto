@@ -1,0 +1,14 @@
+=== TAX INVOICE ===
+Invoice Number: INV-2024-001
+Client: Apex Solutions
+Billing Email: billing@apexsolutions.com
+Date: 2024-08-01
+Due Date: 2024-08-31
+Amount Due: INR 45000
+Payment Status: Overdue
+
+Item Description: Enterprise Software Engineering & Cloud Support Services
+Subtotal: INR 36900.00
+GST (18%): INR 8100.00
+Total Amount Payable: INR 45000.00
+Bank Account: HDFC BANK - AC# 5010049281729 - IFSC: HDFC0001234

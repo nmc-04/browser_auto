@@ -1,0 +1,45 @@
+[
+  {
+    "time": "09:30 AM",
+    "title": "Daily Morning Standup",
+    "attendees": [
+      "Team Alpha",
+      "Scrum Master"
+    ],
+    "type": "Internal",
+    "notes": "Review sprint burndown"
+  },
+  {
+    "time": "11:00 AM",
+    "title": "Q3 Deliverables Architecture Review",
+    "attendees": [
+      "Lead Architect",
+      "Dev Team"
+    ],
+    "type": "Internal",
+    "notes": "API gateway architecture"
+  },
+  {
+    "time": "03:00 PM",
+    "title": "Acrom Systems Client Meeting",
+    "client": "Acrom Systems",
+    "person": "Sarah Jenkins (VP Operations)",
+    "type": "Client",
+    "project": "Acrom Cloud Portal",
+    "notes": "Discussion on milestone 2 delivery and Q4 contract renewal",
+    "agenda": [
+      "Milestone 2 acceptance",
+      "Performance benchmark review",
+      "Q4 retainer agreement"
+    ]
+  },
+  {
+    "time": "05:00 PM",
+    "title": "Daily Wrap-up & Reporting",
+    "attendees": [
+      "Engineering Manager"
+    ],
+    "type": "Internal",
+    "notes": "Submit daily summary"
+  }
+]

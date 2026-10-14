@@ -1,0 +1,23 @@
+[
+  {
+    "email_id": "demo_msg_f84462fa4d",
+    "draft_id": "draft_d27f42ab3e",
+    "idempotency_key": "35c444bc69abf55b09c8a3d66349b8fea34138cfad053ab55a44ee6cd2f0ab8d",
+    "to": "client@example.com",
+    "client_name": "client@example.com",
+    "subject": "Test invoice message unique",
+    "body": "Please review.",
+    "attachments": [
+      "demo_data\\invoices\\INV-2024-001.txt"
+    ],
+    "invoice_number": "TEST-UNIQUE",
+    "sent_at": "2026-10-14T04:47:39.118315+00:00",
+    "status": "SIMULATED",
+    "simulated": true,
+    "verified": true,
+    "verification_status": "SIMULATED_LOCAL_RECORD",
+    "verification_evidence": {
+      "local_record_id": "demo_msg_f84462fa4d"
+    }
+  }
+]

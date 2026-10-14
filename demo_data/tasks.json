@@ -1,0 +1,42 @@
+[
+  {
+    "id": "TASK-101",
+    "title": "Prepare Acrom Systems client meeting brief & review contract specs",
+    "priority": "High",
+    "status": "Pending",
+    "due_date": "Today, 2:30 PM",
+    "category": "Client Relations"
+  },
+  {
+    "id": "TASK-102",
+    "title": "Reconcile unpaid vendor invoices & issue reminder notices",
+    "priority": "High",
+    "status": "Pending",
+    "due_date": "Today, 4:00 PM",
+    "category": "Finance"
+  },
+  {
+    "id": "TASK-103",
+    "title": "Order replenishment office supplies from approved catalog",
+    "priority": "Medium",
+    "status": "Pending",
+    "due_date": "Today, 5:00 PM",
+    "category": "Operations"
+  },
+  {
+    "id": "TASK-104",
+    "title": "Prepare monthly employee activity and performance report",
+    "priority": "Medium",
+    "status": "Pending",
+    "due_date": "Today, 6:00 PM",
+    "category": "Reporting"
+  },
+  {
+    "id": "TASK-105",
+    "title": "Update API gateway documentation in internal repository",
+    "priority": "Low",
+    "status": "Completed",
+    "due_date": "Yesterday",
+    "category": "Engineering"
+  }
+]

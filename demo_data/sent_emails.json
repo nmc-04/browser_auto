@@ -1,0 +1,1337 @@
+[
+  {
+    "email_id": "msg_fe98a21ac1",
+    "draft_id": "draft_36c30b6006",
+    "to": "billing@apexsolutions.com",
+    "client_name": "Apex Solutions",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001 (Apex Solutions)",
+    "body": "Dear Apex Solutions Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-001.\n\n\u2022 Invoice Number: INV-2024-001\n\u2022 Amount Due: INR 45,000.00\n\u2022 Due Date: 2024-08-31\n\u2022 Current Status: OVERDUE\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-001.txt"
+    ],
+    "invoice_number": "INV-2024-001",
+    "sent_at": "2026-09-26T10:16:59.453573+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_27fc4da4d9",
+    "draft_id": "draft_2ca8c8374a",
+    "to": "finance@quantumcorp.com",
+    "client_name": "Quantum Corp",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003 (Quantum Corp)",
+    "body": "Dear Quantum Corp Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-003.\n\n\u2022 Invoice Number: INV-2024-003\n\u2022 Amount Due: INR 32,000.00\n\u2022 Due Date: 2024-09-25\n\u2022 Current Status: UNPAID\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-003.txt"
+    ],
+    "invoice_number": "INV-2024-003",
+    "sent_at": "2026-09-26T10:16:59.582535+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_d360d5679c",
+    "draft_id": "draft_964903b9e6",
+    "to": "payables@vertexmedia.org",
+    "client_name": "Vertex Media",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004 (Vertex Media)",
+    "body": "Dear Vertex Media Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-004.\n\n\u2022 Invoice Number: INV-2024-004\n\u2022 Amount Due: INR 12,750.00\n\u2022 Due Date: 2024-09-10\n\u2022 Current Status: OVERDUE\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-004.txt"
+    ],
+    "invoice_number": "INV-2024-004",
+    "sent_at": "2026-09-26T10:16:59.596744+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_481247824b",
+    "draft_id": "draft_27a506497c",
+    "to": "contact@horizonlabs.net",
+    "client_name": "Horizon Labs",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005 (Horizon Labs)",
+    "body": "Dear Horizon Labs Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-005.\n\n\u2022 Invoice Number: INV-2024-005\n\u2022 Amount Due: INR 68,000.00\n\u2022 Due Date: 2024-09-28\n\u2022 Current Status: UNPAID\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-005.txt"
+    ],
+    "invoice_number": "INV-2024-005",
+    "sent_at": "2026-09-26T10:16:59.616456+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_e6c1d22e1c",
+    "draft_id": "draft_6fa3a3c195",
+    "to": "management@workpilot.com",
+    "client_name": "management@workpilot.com",
+    "subject": "Monthly Employee Activity and Performance Report",
+    "body": "Attached is the compiled monthly employee activity and performance report.",
+    "attachments": [
+      "reports/employee_activity_report.md"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T10:20:09.652132+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a6f1ccdfba",
+    "draft_id": "draft_905c05ce4a",
+    "to": "billing@apexsolutions.com",
+    "client_name": "Apex Solutions",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001 (Apex Solutions)",
+    "body": "Dear Apex Solutions Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-001.\n\n\u2022 Invoice Number: INV-2024-001\n\u2022 Amount Due: INR 45,000.00\n\u2022 Due Date: 2024-08-31\n\u2022 Current Status: REMINDER SENT\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-001.txt"
+    ],
+    "invoice_number": "INV-2024-001",
+    "sent_at": "2026-09-26T10:26:47.920127+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_72c160db4d",
+    "draft_id": "draft_acf0034f7d",
+    "to": "finance@quantumcorp.com",
+    "client_name": "Quantum Corp",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003 (Quantum Corp)",
+    "body": "Dear Quantum Corp Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-003.\n\n\u2022 Invoice Number: INV-2024-003\n\u2022 Amount Due: INR 32,000.00\n\u2022 Due Date: 2024-09-25\n\u2022 Current Status: REMINDER SENT\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-003.txt"
+    ],
+    "invoice_number": "INV-2024-003",
+    "sent_at": "2026-09-26T10:26:47.925822+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_eef3b8a111",
+    "draft_id": "draft_7022b04cb7",
+    "to": "payables@vertexmedia.org",
+    "client_name": "Vertex Media",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004 (Vertex Media)",
+    "body": "Dear Vertex Media Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-004.\n\n\u2022 Invoice Number: INV-2024-004\n\u2022 Amount Due: INR 12,750.00\n\u2022 Due Date: 2024-09-10\n\u2022 Current Status: REMINDER SENT\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-004.txt"
+    ],
+    "invoice_number": "INV-2024-004",
+    "sent_at": "2026-09-26T10:26:47.958082+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_116e66c99e",
+    "draft_id": "draft_a3802bbea5",
+    "to": "contact@horizonlabs.net",
+    "client_name": "Horizon Labs",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005 (Horizon Labs)",
+    "body": "Dear Horizon Labs Accounts Team,\n\nThis is an automated reminder regarding outstanding invoice INV-2024-005.\n\n\u2022 Invoice Number: INV-2024-005\n\u2022 Amount Due: INR 68,000.00\n\u2022 Due Date: 2024-09-28\n\u2022 Current Status: REMINDER SENT\n\nPlease find the invoice statement attached. Kindly process this payment at your earliest convenience.\n\nBest regards,\nFinance & Operations Team\nWorkPilot Enterprise Automation",
+    "attachments": [
+      "demo_data/invoices\\INV-2024-005.txt"
+    ],
+    "invoice_number": "INV-2024-005",
+    "sent_at": "2026-09-26T10:26:47.984951+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_4d0edacf61",
+    "draft_id": "draft_9b5167971e",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:11.784763+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_d3a4b9b3aa",
+    "draft_id": "draft_13c0c31a6d",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:11.794769+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_33115adcbb",
+    "draft_id": "draft_d724755674",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:11.830319+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_6e6106a754",
+    "draft_id": "draft_0d1bfe0bc4",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:11.860173+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_98299c569a",
+    "draft_id": "draft_a607349a08",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:12.955013+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_348daf54b0",
+    "draft_id": "draft_fd7607557e",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:12.974773+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_058c32ab25",
+    "draft_id": "draft_85c29acb2a",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:12.995487+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_3afddc6a91",
+    "draft_id": "draft_2a3eecaf01",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:53:13.015328+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_21a6c5cb31",
+    "draft_id": "draft_94813dd00c",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:28.555501+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_8ffd383136",
+    "draft_id": "draft_099dc41882",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:28.565289+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_dae98d949a",
+    "draft_id": "draft_2688c3b244",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:28.599256+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_6a5ce21fc2",
+    "draft_id": "draft_70991a08f9",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:28.625410+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_88274b4b7a",
+    "draft_id": "draft_e6591930d0",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:29.722383+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_7acb05c612",
+    "draft_id": "draft_84121c8f31",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:29.756130+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_0756b8610f",
+    "draft_id": "draft_bf6935e035",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:29.786988+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_88815e5a32",
+    "draft_id": "draft_42b97cfaf0",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T11:57:29.812969+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_15fba71a3d",
+    "draft_id": "draft_b92ff58b79",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:27.788017+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_65b281abb8",
+    "draft_id": "draft_408bc81b5a",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:27.815948+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_b1ea0598f6",
+    "draft_id": "draft_6d6ab72b7c",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:27.852073+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_37d5b596fc",
+    "draft_id": "draft_7b9addedcc",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:27.884496+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_1951c866f7",
+    "draft_id": "draft_b555cc2eb4",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:29.029291+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_bdee46c8fc",
+    "draft_id": "draft_d4bb823b30",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:29.071701+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_13e8330b20",
+    "draft_id": "draft_71b6ae087d",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:29.110110+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_65a022f3ea",
+    "draft_id": "draft_af6e2d35c8",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T12:04:29.163540+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_c2ef4bb200",
+    "draft_id": "draft_6ffc3e3f22",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:27.033189+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_bd03532433",
+    "draft_id": "draft_e9e6ec7412",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:27.140484+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_9bdeda876a",
+    "draft_id": "draft_8379f88357",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:27.239381+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_476cc29495",
+    "draft_id": "draft_5c0d619813",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:27.324229+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_0df44a5b58",
+    "draft_id": "draft_e335442d51",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:28.565268+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_be44a9ea91",
+    "draft_id": "draft_afb2627ad4",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:28.674496+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_7f5ddeb417",
+    "draft_id": "draft_438fc28ca4",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:28.752639+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_68e425dc80",
+    "draft_id": "draft_0de1134612",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:07:28.826534+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_6dda5420b6",
+    "draft_id": "draft_a0d4c78c77",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:15.979794+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_e7198c7370",
+    "draft_id": "draft_2fb9c2a2d1",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:16.041793+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_8eff5f8ed3",
+    "draft_id": "draft_6b40c1178b",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:16.090735+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_87d20dcdf3",
+    "draft_id": "draft_3f09683e96",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:16.132350+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_bc10422648",
+    "draft_id": "draft_e7da9d14c4",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:17.261635+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_9bc1a8586a",
+    "draft_id": "draft_fc79fdeb53",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:17.309101+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a4bd7d6d29",
+    "draft_id": "draft_636a4eaf81",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:17.346033+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_dcdb96d8e2",
+    "draft_id": "draft_1a87feabbb",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:19:17.382173+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_f1ce35257e",
+    "draft_id": "draft_e1b6f04d6f",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:08.741092+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_882e85187b",
+    "draft_id": "draft_9f8b5119fb",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:08.786886+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_19b17f275a",
+    "draft_id": "draft_b7b826b4a9",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:08.827271+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_1bce7f57d7",
+    "draft_id": "draft_31849ebdbe",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:08.863352+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a8b6dfb46b",
+    "draft_id": "draft_58df5a2144",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:09.984996+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_b03c56fcc7",
+    "draft_id": "draft_4ff0ee5e92",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:10.044305+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_ee4ab312b7",
+    "draft_id": "draft_a8849bb427",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:10.093256+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_b186c74246",
+    "draft_id": "draft_68f429191c",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:21:10.148436+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_082ab1c7d3",
+    "draft_id": "draft_ee2a644e29",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:57.427105+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_15ea272340",
+    "draft_id": "draft_bf7776402a",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:57.472396+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_6f66822a1a",
+    "draft_id": "draft_16bfca1239",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:57.510993+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_d45e71b45d",
+    "draft_id": "draft_b272ae1b88",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:57.548512+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_b5d03a5875",
+    "draft_id": "draft_b6db8e0e1e",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:58.668940+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_29d856f338",
+    "draft_id": "draft_621c757f3b",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:58.722404+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_7ea04276ab",
+    "draft_id": "draft_f95cc473a7",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:58.760042+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_3727e554ee",
+    "draft_id": "draft_4c2f678bd1",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:35:58.796564+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a757f37aa3",
+    "draft_id": "draft_5398a1e9eb",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:59:59.952031+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_2cf7449445",
+    "draft_id": "draft_dd44ed3d06",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T16:59:59.993461+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_bb3a76b404",
+    "draft_id": "draft_e6e788b689",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:00.037869+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_d5be545074",
+    "draft_id": "draft_0f7cc449eb",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:00.088303+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_0fada23c6e",
+    "draft_id": "draft_3193891f0d",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:01.209854+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_9980059dd0",
+    "draft_id": "draft_b8572bae55",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:01.273711+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_2e4afeb826",
+    "draft_id": "draft_e46bca308d",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:01.324704+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_01f620db7a",
+    "draft_id": "draft_c07aa9255b",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-26T17:00:01.382442+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_cde4dc3fa3",
+    "draft_id": "draft_1f1ccd959f",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:44.494627+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_9e4d41766f",
+    "draft_id": "draft_92319356ac",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:44.601176+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_07231e6ecd",
+    "draft_id": "draft_7e36b84454",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:44.672306+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_c092ddc5ec",
+    "draft_id": "draft_a607b33c4b",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:44.739568+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_906de3d9be",
+    "draft_id": "draft_27ecbba124",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:45.959665+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_b5a1ce5513",
+    "draft_id": "draft_a9e9fa7691",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:46.053954+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a50d6d20c4",
+    "draft_id": "draft_0bc104c156",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:46.134066+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_e899048cdb",
+    "draft_id": "draft_d1b37a36ae",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-09-27T15:33:46.193774+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_14aa153407",
+    "draft_id": "draft_4eaba9fca8",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:10.012766+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_e8273ad8b0",
+    "draft_id": "draft_2a0474e81c",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:10.062520+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_86e054875c",
+    "draft_id": "draft_cadc0fcbb5",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:10.123569+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_49fc3e19ee",
+    "draft_id": "draft_d95d5c0a11",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:10.165019+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_0e9c7c79d1",
+    "draft_id": "draft_fba7d5d7d9",
+    "to": "billing@apexsolutions.com",
+    "client_name": "billing@apexsolutions.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-001",
+    "body": "Automated reminder for invoice INV-2024-001",
+    "attachments": [
+      "demo_data/invoices/INV-2024-001.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:11.272583+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_49d9c0c620",
+    "draft_id": "draft_c8c435dbb7",
+    "to": "finance@quantumcorp.com",
+    "client_name": "finance@quantumcorp.com",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-003",
+    "body": "Automated reminder for invoice INV-2024-003",
+    "attachments": [
+      "demo_data/invoices/INV-2024-003.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:11.342741+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_a5bbd975b5",
+    "draft_id": "draft_44f79c677f",
+    "to": "payables@vertexmedia.org",
+    "client_name": "payables@vertexmedia.org",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-004",
+    "body": "Automated reminder for invoice INV-2024-004",
+    "attachments": [
+      "demo_data/invoices/INV-2024-004.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:11.389390+00:00",
+    "status": "SENT",
+    "verified": true
+  },
+  {
+    "email_id": "msg_ec4e096338",
+    "draft_id": "draft_e31390ffff",
+    "to": "contact@horizonlabs.net",
+    "client_name": "contact@horizonlabs.net",
+    "subject": "Urgent: Payment Reminder for Invoice INV-2024-005",
+    "body": "Automated reminder for invoice INV-2024-005",
+    "attachments": [
+      "demo_data/invoices/INV-2024-005.txt"
+    ],
+    "invoice_number": null,
+    "sent_at": "2026-10-14T03:53:11.420427+00:00",
+    "status": "SENT",
+    "verified": true
+  }
+]

@@ -1,0 +1,7 @@
+CONTRACT SUMMARY: Acrom Systems Q4 Retainer Renewal
+Contract ID: AGR-2024-ACR-88
+Term: 12 Months (Starting Oct 1, 2024)
+Value: INR 3,60,000 per quarter
+SLA: 99.9% uptime with 2-hour critical response guarantee
+Special Clauses: Added 20 hours/month dedicated site reliability engineering advisory.
+Status: Ready for client sign-off in today's 3 PM meeting.
